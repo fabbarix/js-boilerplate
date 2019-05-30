@@ -1,4 +1,4 @@
-import { Main } from '../src';
+import { Main } from '../src/main';
 
 let simpleExpressionRegex = /\s*\d+\s*(\+|-)\s*\d+\s*\=\s*-?\d+/;
 
