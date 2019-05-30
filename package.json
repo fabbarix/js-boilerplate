@@ -7,21 +7,35 @@
   "scripts": {
     "start": "node -r esm src/index.js",
     "test": "node -r esm node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty ./specs -r ./steps",
-    "dev:test": "mocha",
-    "dev:nyc": "nyc --require esm mocha"
+    "dev:test": "jest"
   },
   "author": "Fabio 'MrWHO' Torchetti <fabbari@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@swissquote/crafty-preset-jest": "^1.7.2",
     "chai": "^4.2.0",
     "cucumber": "^5.1.0",
     "cucumber-pretty": "^1.5.0",
+    "jest": "^24.8.0",
     "jshint": "^2.10.2",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1"
   },
+  "nyc": {
+    "all": true
+  },
   "esm": {
     "cjs": true
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [ "src/**/*.js" ],
+    "coverageDirectory": "coverage",
+    "transformIgnorePatterns": [],
+    "transform": {
+        "(src|test)/.*\\.js": "@swissquote/crafty-preset-jest/src/esm-transformer"
+    }
   },
   "dependencies": {
     "esm": "^3.2.25",
