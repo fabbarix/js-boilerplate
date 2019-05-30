@@ -1,0 +1,30 @@
+{
+  "name": "js_template",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JS Kata Template",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r esm src/index.js",
+    "test": "node -r esm node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty ./specs -r ./steps",
+    "dev:test": "mocha",
+    "dev:nyc": "nyc --require esm mocha"
+  },
+  "author": "Fabio 'MrWHO' Torchetti <fabbari@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.0",
+    "jshint": "^2.10.2",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  },
+  "esm": {
+    "cjs": true
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "inquirer": "^6.3.1"
+  }
+}
