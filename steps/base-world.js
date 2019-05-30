@@ -1,4 +1,5 @@
 import { setWorldConstructor } from  "cucumber";
+import { Calculator } from '../src/calculator';
 
 class BaseWorld {
 
@@ -15,14 +16,11 @@ class BaseWorld {
   }
   
   constructor() {
+    this._calc = new Calculator();
   }
 
-  /**
-   * In real life this would be coming from your source code
-   * business logic.
-   */
   add() {
-    this._sum = this._firstNumber + this._secondNumber;
+    this._sum = this._calc.add(this._firstNumber, this._secondNumber);
   }
 
 }
